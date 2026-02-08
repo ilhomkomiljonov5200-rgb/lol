@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Valentine Prank 😼</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:sans-serif;
+    background:#ffe6ef;
+    overflow:hidden;
+}
+
+#main{
+    text-align:center;
+}
+
+h1{
+    color:#c62828;
+    margin-bottom:30px;
+}
+
+button{
+    padding:12px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.2s;
+}
+
+#yes{
+    background:#4caf50;
+    color:white;
+}
+
+#no{
+    background:#e53935;
+    color:white;
+    position:absolute;
+}
+
+#result{
+    display:none;
+    text-align:center;
+}
+
+img{
+    width:260px;
+    border-radius:15px;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="main">
+    <h1>Will you be my valentine? 🌹</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+</div>
+
+<div id="result">
+    <h1>Stop messing with me! 😾</h1>
+    <img src="https://pbs.twimg.com/amplify_video_thumb/1915663979491581952/img/fOghWgE1pFVCxjfk.jpg" alt="Cat">
+    <br><br>
+    <button onclick="restart()">Restart 🔁</button>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+function moveNo(){
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("mousemove", moveNo);
+
+yesBtn.addEventListener("click", () => {
+    window.open("https://t.me/Ilhom_Komiljonov", "_blank");
+});
+
+setTimeout(() => {
+    document.getElementById("main").style.display="none";
+    document.getElementById("result").style.display="block";
+}, 20000);
+
+function restart(){
+    location.reload();
+}
+</script>
+
+</body>
+</html>
